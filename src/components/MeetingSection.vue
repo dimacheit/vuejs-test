@@ -12,7 +12,7 @@ const filters = ref({
 const currentPage = ref(1);
 const itemsPerPage = ref(10);
 
-onMounted(async () => {
+onMounted(async () => { 
   try {
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
     meetings.value = response.data.map(post => ({
