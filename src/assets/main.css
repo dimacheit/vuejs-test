@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+.container, [class*="__container"] {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
+
+input:active,
+input:focus,
+input:focus-visible,
+input:hover,
+button:hover,
+button:focus,
+select:focus {
+  outline: none;
+}
+
+@media (hover: hover) {
+  button:hover {
+    cursor: pointer;
+  }
+  a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: r(1);
+  }
+}
+
+@media (min-width: 1024px) {}
