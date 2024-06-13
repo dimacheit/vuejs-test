@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
+
 import axios from 'axios';
 
 const meetings = ref([]);
@@ -74,7 +75,7 @@ const pagination = computed(() => {
 });
 
 const viewMeeting = (meeting) => {
-  alert(`Перегляд засідання: ${meeting.name}`);
+  router.push({ name: 'MeetingView', params: { id: meeting.id } });
 };
 
 const prevPage = () => {
@@ -141,7 +142,11 @@ const nextPage = () => {
               <td>{{ meeting.name }}</td>
               <td>{{ meeting.date }}</td>
               <td>{{ meeting.participants }}</td>
-              <td><button @click="viewMeeting(meeting)">Переглянути</button></td>
+              <!--<td><button @click="viewMeeting(meeting)">Переглянути</button></td>
+              <td><router-link to="/zasidannya">Перейти</router-link></td>-->
+              <td>
+                <router-link :to="{ name: 'MeetingView', params: { id: meeting.id } }">Переглянути</router-link>
+              </td>
             </tr>
             <tr>
               <td>Засідання 1</td>

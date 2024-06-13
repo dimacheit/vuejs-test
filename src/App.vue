@@ -5,17 +5,20 @@ import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 
 import Header from './components/Header.vue'
-import Speedbar from './components/Speedbar.vue'
-import MeetingSection from './components/MeetingSection.vue'
+import HomePage from './pages/HomePage.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
   <div class="wrapper">
     <Header />
 
-    <Speedbar />
+    <div class="main">
+      <RouterView />
+    </div>
 
-    <MeetingSection />
+    <Footer />
+
   </div>
 
 </template>
@@ -25,5 +28,9 @@ import MeetingSection from './components/MeetingSection.vue'
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+.main {
+  flex: 1;
+  padding-top: 80px;
 }
 </style>
